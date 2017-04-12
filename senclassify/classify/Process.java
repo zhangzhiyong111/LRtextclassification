@@ -57,7 +57,8 @@ public class Process {
         }
         return logVector;
     }
-
+   
+    //主要是将训练集转换成数组类型的
     public static void traindataToFormat(String trainfilePath, HashSet<String> stopwords, HashMap<String, List<String>> wordMap){
         List<double[]> tempX = new ArrayList<double[]>();
         List<Double> tempY = new ArrayList<Double>();
