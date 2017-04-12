@@ -45,18 +45,19 @@ public class LogisticRegresion {
             }
         }
     }
-
+   //返回的两个向量的内积
     private double innerProduct(double[] w, double[] sample){
         double result = 0.0;
         for(int i = 0; i < w.length; i ++)
             result += w[i] * sample[i];
         return result;
     }
-
+    //回返sigmoid值
     private double sigmoid(double z){
         return 1 / (1 + Math.exp(- z));
     }
-
+    
+    //对样本进行预测
     public double predicted(double[] sample){
         if(sample.length != n_Pars.length){
             System.out.println("error existed !!!");
