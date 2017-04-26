@@ -41,7 +41,11 @@ public class LogisticRegresion {
                 for(int s = 0; s < size; s ++){
                     sum += (Y[s] - out[s]) * X[s][d];
                 }
-                n_Pars[d] = n_Pars[d] + STEP * sum;
+                //临时变量的保存
+                double temp_Para = n_Pars[d]
+                n_Pars[d] = temp_Para + STEP * sum;
+             //   n_Pars[d] = (double) (temp_Para + STEP * sum - 0.01 * Math.pow(temp_Para, 2));  L2正则
+             //  n_Pars[d] = (double) (temp_Para + STEP * sum - 0.01 * Math.abs(temp_Para));  L1正则
             }
         }
     }
